@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import Intro from './Intro';
+// import Hero from './Hero';
+import About from './About';
 
 const Home = () => {
   return (
@@ -8,6 +10,8 @@ const Home = () => {
       <Header />
       <div className="bg-primary px-40">
         <Intro />
+        {/* <Hero />  */}
+        <About />
       </div>
     </div>
   );
