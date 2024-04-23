@@ -6,7 +6,9 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Intro />
+      <div className="bg-primary px-40">
+        <Intro />
+      </div>
     </div>
   );
 };
