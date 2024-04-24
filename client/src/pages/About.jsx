@@ -16,7 +16,7 @@ const About = () => {
     'Version contlor',
   ];
   return (
-    <div className="bg-primary h-full pb-10">
+    <div className="bg-primary h-full p-10">
       <SectionTitle title="About" />
 
       <div className="flex w-full items-center sm:flex-col md:flex-col">
@@ -30,7 +30,7 @@ const About = () => {
           ></dotlottie-player>
         </div>
 
-        <div className="flex flex-col gap-5 w-1/2 sm:w-full md:w-full">
+        <div className="flex flex-col gap-5 w-1/2 sm:w-full md:w-full ">
           <p className="text-white">
             Hello! my name is Azadeh. I enjoy creating things that live on
             internet. My interest in web development started back in 2015 Lorem
@@ -56,7 +56,7 @@ const About = () => {
         </h1>
       </div>
 
-      <div className="flex flex-wrap gap-10 m-5 sm:gap-3 sm:m-2 md:gap-5 md:m-4">
+      <div className="flex flex-wrap gap-10 m-5 sm:gap-3 sm:m-2 md:gap-5 md:m-4 ">
         {skills.map((skill, index) => (
           <div key={index} className="border border-tertiary py-3 px-10 sm:py-1 sm:px-3 md:py-2 md:px-6">
             <h1 className="text-tertiary">{skill}</h1>

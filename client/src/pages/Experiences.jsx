@@ -10,7 +10,7 @@ const Experiences = () => {
     setSelectedItem(index);
   };
   return (
-    <div>
+    <div className="bg-primary h-full p-10">
       <SectionTitle title="Experience" />
 
       <div className="flex py-10 gap-10 sm:flex-col">

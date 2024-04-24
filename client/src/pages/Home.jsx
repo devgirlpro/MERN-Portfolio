@@ -4,6 +4,8 @@ import Intro from './Intro';
 // import Hero from './Hero';
 import About from './About';
 import Experiences from './Experiences';
+import Projects from './Projects';
+import Coursess from './Courses';
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
         {/* <Hero />  */}
         <About />
         <Experiences />
+        <Projects />
+        <Coursess />
       </div>
     </div>
   );
