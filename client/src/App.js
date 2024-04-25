@@ -7,10 +7,14 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Learn from './pages/Learn';
 import Coursess from './pages/Courses';
+import Loader from './components/Loader';
+import { useState } from 'react'
 
 function App() {
+  const [showLoading, setShowLoading] = useState(false)
   return (
    <BrowserRouter>
+   {showLoading ? <Loader /> : null}
     <Routes>
       <Route  path="/" element={<Home />} />
       <Route  path="/about" element={<About />} />

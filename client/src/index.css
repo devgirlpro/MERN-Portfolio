@@ -31,3 +31,52 @@ i:hover {
   color: #80F;
   font-size: 20px;
 }
+
+
+/* loader animation */
+.azadeh{
+  animation: azadeh 1s infinite;
+}
+@keyframes azadeh{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  100%{
+    opacity: 0.4;
+  }
+}
+
+
+.fullstack{
+  animation: fullstack 1s infinite;
+}
+@keyframes fullstack{
+  0%{
+    opacity: 0.4;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.4;
+  }
+}
+
+
+.developer{
+  animation: developer 1s infinite;
+}
+@keyframes developer{
+  0%{
+    opacity: 0.4;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  100%{
+    opacity: 1;
+  }
+}
