@@ -34,18 +34,17 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-10 sm:flex-col">
-          <img
-            src={projects[selectedItem].image}
-            alt=""
-            className="h-60 min-w-72"
-          />
-        </div>
-
         <div className="flex flex-col gap-5">
           <h1 className="text-secondary text-xl">
             {projects[selectedItem].title}
           </h1>
+          <div className="flex items-center justify-center gap-10  sm:flex-col md:flex-col">
+            <img
+              src={projects[selectedItem].image}
+              alt=""
+              className="h-60 min-w-72"
+            />
+          </div>
 
           <p className="text-white">{projects[selectedItem].description}</p>
         </div>

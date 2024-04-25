@@ -27,14 +27,14 @@ const Contact = () => {
           <p className="text-white text-sm">{'}'}</p>
         </div>
 
-        <div className='h-52'>
+        {/* <div className='h-52'>
           <dotlottie-player
             src="https://lottie.host/1ff736c3-b067-4610-a8ce-03249218027e/9H3z91T54Q.json"
             background="transparent"
             speed="1"
             autoplay
           ></dotlottie-player>
-        </div>
+        </div> */}
 
       </div>
     </div>

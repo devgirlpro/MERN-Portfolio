@@ -39,16 +39,14 @@ const Coursess = () => {
           <h1 className="text-secondary text-xl">
             {Courses[selectedItem].title}
           </h1>
-          <div className="flex items-center justify-center gap-10  sm:flex-col">
-          <p className="text-white">{Courses[selectedItem].description}</p>
-
+          <div className="flex items-center justify-center gap-10  sm:flex-col md:flex-col">
           <img
             src={Courses[selectedItem].image}
             alt=""
             className="h-52 w-80"
           />
           </div>
-          
+          <p className="text-white">{Courses[selectedItem].description}</p>
         </div>
       </div>
     </div>

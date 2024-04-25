@@ -6,7 +6,7 @@ import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Learn from './pages/Learn';
-import Courses from './pages/Courses';
+import Coursess from './pages/Courses';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route  path="/" element={<Home />} />
       <Route  path="/about" element={<About />} />
       <Route  path="/projects" element={<Projects />} />
-      <Route  path="/courses" element={<Courses />} />
+      <Route  path="/courses" element={<Coursess />} />
       <Route  path="/resume" element={<Resume />} />
       
       
