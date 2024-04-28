@@ -15,8 +15,15 @@ const Navbar = () => {
             About
           </Link>
         </li>
+
         <li className="text-secondary text-lg font-medium  p-2  sm:p-0 sm:text-xs sm:font-extralight">
-          <Link to="/projects" className="border-b border-tertiary">
+          <Link to="/exprience" className="border-b border-tertiary">
+            Experinces
+          </Link>
+        </li>
+
+        <li className="text-secondary text-lg font-medium  p-2  sm:p-0 sm:text-xs sm:font-extralight">
+          <Link to="/project" className="border-b border-tertiary">
             Projects
           </Link>
         </li>

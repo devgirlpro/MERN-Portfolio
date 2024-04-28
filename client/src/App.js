@@ -9,6 +9,7 @@ import Learn from './pages/Learn';
 import Coursess from './pages/Courses';
 import Loader from './components/Loader';
 import { useState } from 'react'
+import Experiences from './pages/Experiences';
 
 function App() {
   const [showLoading, setShowLoading] = useState(false)
@@ -18,8 +19,9 @@ function App() {
     <Routes>
       <Route  path="/" element={<Home />} />
       <Route  path="/about" element={<About />} />
-      <Route  path="/projects" element={<Projects />} />
-      <Route  path="/courses" element={<Coursess />} />
+      <Route  path="/exprience" element={<Experiences />} />
+      <Route  path="/project" element={<Projects />} />
+      <Route  path="/course" element={<Coursess />} />
       <Route  path="/resume" element={<Resume />} />
       
       

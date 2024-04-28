@@ -1,7 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
 import { experiences } from '../resources/experiences';
 import SectionTitle from '../components/SectionTitle';
-import { useState } from 'react';
+
 
 const Experiences = () => {
   const [selectedItem, setSelectedItem] = useState(0);
