@@ -12,16 +12,19 @@ import Experiences from './pages/Experiences';
 import Loader from './components/Loader';
 import { useState, useEffect } from 'react'
 import axios from "axios";
-
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
+import {SetPortfolioData} from './redux/rootSlice'
 
 function App() {
-  const [showLoading, setShowLoading] = useState(false);
-
+//const [showLoading, setShowLoading] = useState(false);
+const {loading, portfolioData} = useSelector((state) => state.root)
+const dispatch  = useDispatch();
 
 const getPortfolioData = async () => {
   try {
     const response = await axios.get("http://localhost:5000/portfolio")
-    console.log(response.data)
+    dispatch(SetPortfolioData(response.data))
   } catch (error) {
     console.log(error)
   }
@@ -30,11 +33,16 @@ const getPortfolioData = async () => {
 
 useEffect(() => {
   getPortfolioData()
+}, [getPortfolioData])
+
+
+useEffect(() => {
+  console.log("portfolioData", portfolioData)
 }, [])
 
   return (
    <BrowserRouter>
-   {showLoading ? <Loader /> : null}
+   {loading ? <Loader /> : null}
     <Routes>
       <Route  path="/" element={<Home />} />
       <Route  path="/intro" element={<Intro />} />
