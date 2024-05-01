@@ -9,16 +9,16 @@ const leftSider = () => {
             href="https://www.linkedin.com/in/azadeh-galidari/"
             target="_blank"
           >
-            <i class="ri-linkedin-fill "></i>
+            <i className="ri-linkedin-fill "></i>
           </a>
           <a href="https://github.com/devgirlpro" target="_blank">
-            <i class="ri-github-fill "></i>
+            <i className="ri-github-fill "></i>
           </a>
           <a href="">
-            <i class="ri-mail-send-fill "></i>
+            <i className="ri-mail-send-fill "></i>
           </a>
           <a href="">
-            <i class="ri-phone-fill "></i>
+            <i className="ri-phone-fill "></i>
           </a>
         </div>
         <div className="w-[1px] h-32 bg-secondary sm:hidden"></div>
