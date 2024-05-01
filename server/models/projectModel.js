@@ -1,16 +1,8 @@
 const mongoose = require('mongoose');
 
 
-const IntroSchema = new mongoose.Schema({
-    welcomeText: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    caption: {
+const projectSchema = new mongoose.Schema({
+    title: {
       type: String,
       required: true,
     },
@@ -18,11 +10,22 @@ const IntroSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
+    link: {
+      type: String,
+      required: true,
+    },
+    technologies: {
+      type: Array,
+      required: true,
+    },
   },
   {
     timestamps: true,
   });
 
-
-  const Intro = mongoose.model("Intro", IntroSchema);
-  module.exports = Intro;
+  const Project = mongoose.model("projects", projectSchema);
+  module.exports = Project;

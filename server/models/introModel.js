@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 
-const experienceSchema = new mongoose.Schema({
-    title: {
+
+const IntroSchema = new mongoose.Schema({
+    welcomeText: {
       type: String,
       required: true,
     },
-    period: {
+    name: {
       type: String,
       required: true,
     },
-    company: {
+    caption: {
       type: String,
       required: true,
     },
@@ -23,5 +24,5 @@ const experienceSchema = new mongoose.Schema({
   });
 
 
-  const Experience = mongoose.model("Experience", experienceSchema);
-  module.exports = Experience;
+  const Intro = mongoose.model("intros", IntroSchema);
+  module.exports = Intro;
