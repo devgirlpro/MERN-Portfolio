@@ -33,12 +33,12 @@ const getPortfolioData = async () => {
 
 useEffect(() => {
   getPortfolioData()
-}, [getPortfolioData])
+}, [])
 
 
 useEffect(() => {
   console.log("portfolioData", portfolioData)
-}, [])
+}, [getPortfolioData])
 
   return (
    <BrowserRouter>
