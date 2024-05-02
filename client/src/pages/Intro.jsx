@@ -4,9 +4,8 @@ import { useSelector } from 'react-redux'
 const Intro = () => {
   const { portfolioData } = useSelector((state) => state.root);
   const {intro} = portfolioData;
-  console.log("intro DATA =>", intro[0])
  const {welcomeText, name, caption, description} = intro[0]
- console.log("intro DATA =>", welcomeText)
+
 
 
   return (
