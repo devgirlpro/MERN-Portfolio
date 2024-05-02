@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { experiences } from '../resources/experiences';
+
 import SectionTitle from '../components/SectionTitle';
 import { useSelector } from 'react-redux';
 
@@ -47,7 +47,7 @@ const Experiences = () => {
           <h1 className="text-tertiary text-xl">
             {experience[selectedItem].company}
           </h1>
-          <p className="text-white">{experiences[selectedItem].description}</p>
+          <p className="text-white">{experience[selectedItem].description}</p>
         </div>
       </div>
     </div>

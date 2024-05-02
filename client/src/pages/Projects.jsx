@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import { projects } from '../resources/experiences';
+
 import SectionTitle from '../components/SectionTitle';
 import { useSelector } from 'react-redux';
 

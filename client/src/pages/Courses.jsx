@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { Courses } from '../resources/experiences';
 
 import SectionTitle from '../components/SectionTitle';
+import { useSelector } from 'react-redux';
 
 const Coursess = () => {
   const [selectedItem, setSelectedItem] = useState(0);
+  const { portfolioData } = useSelector((state) => state.root);
+  const { course } = portfolioData;
 
   const selectHandler = (index) => {
     setSelectedItem(index);
@@ -16,7 +19,7 @@ const Coursess = () => {
 
       <div className="flex py-20 gap-10 sm:flex-col">
         <div className="flex flex-col gap-10 border-l-2 border-[#cfa0f73e] w-2/5 sm:flex-row sm:w-full sm:overflow-x-scroll">
-          {Courses.map((crs, index) => (
+          {course.map((crs, index) => (
             <div
               key={index}
               onClick={() => selectHandler(index)}
@@ -37,16 +40,16 @@ const Coursess = () => {
 
         <div className="flex flex-col gap-5">
           <h1 className="text-secondary text-xl">
-            {Courses[selectedItem].title}
+            {course[selectedItem].title}
           </h1>
           <div className="flex items-center justify-center gap-10  sm:flex-col md:flex-col">
           <img
-            src={Courses[selectedItem].image}
+            src={course[selectedItem].image}
             alt=""
             className="h-52 w-80"
           />
           </div>
-          <p className="text-white">{Courses[selectedItem].description}</p>
+          <p className="text-white">{course[selectedItem].description}</p>
         </div>
       </div>
     </div>
