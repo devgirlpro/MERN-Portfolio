@@ -9,7 +9,7 @@ const About = () => {
  
 
   return (
-    <div className="bg-primary h-full p-10">
+    <div className="bg-xprimary h-full p-10">
       <SectionTitle title="About" />
 
       <div className="flex w-full items-center sm:flex-col md:flex-col">

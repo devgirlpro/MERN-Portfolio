@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Intro from './pages/Intro';
@@ -47,7 +46,7 @@ function App() {
       {loading ? <Loader /> : null}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/intro" element={<Intro />} />
+        {/* <Route path="/intro" element={<Intro />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/exprience" element={<Experiences />} />
         <Route path="/project" element={<Projects />} />

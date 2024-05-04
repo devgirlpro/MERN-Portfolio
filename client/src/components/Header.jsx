@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { styles } from '../styles';
+import { logo } from '../assets';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Header = () => {
+   const [active, setActive] = useState('');
+   const [scrolled, setScrolled] = useState(false);
+
   return (
     <>
-      <div className="p-5 bg-primary flex  justify-between border-b border-tertiary sm:flex sm:justify-center">
-        <h1 className="text-tertiary text-lg font-semibold sm:hidden">Azadeh Galidari</h1>
-        <h1 className="text-tertiary text-lg font-semibold">
-          Fullstack Web Developer
-        </h1>
-        <h1 className="text-tertiary text-lg font-semibold sm:hidden">Portfolio</h1>
+      <div
+        className={`items-center py-5 fixed top-0 block${
+          scrolled ? 'bg-xprimary' : 'bg-transparent'
+        }`}
+      >
+        <div >
+          <Link
+            to="/"
+            className="flex items-center gap-2"
+            onClick={() => {
+              setActive('');
+              window.scrollTo(0, 0);
+            }}
+          >
+            <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+            <p className="text-white text-[18px] font-bold cursor-pointer flex ">
+              Azadeh &nbsp;
+              <span className="sm:hidden">
+                {' '}
+                | Fullstack Web Developer
+              </span>
+            </p>
+          </Link>
+        </div>
       </div>
-      <Navbar />
+      {/* <Navbar /> */}
     </>
   );
 };
