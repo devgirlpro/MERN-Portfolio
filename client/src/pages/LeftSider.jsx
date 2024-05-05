@@ -4,7 +4,7 @@ const leftSider = () => {
   return (
     <div className="fixed left-0 bottom-0 px-5  sm:static">
       <div className="flex flex-col items-center">
-        <div className="flex flex-col gap-3 text-secondary sm:flex-row">
+        <div className="flex flex-col gap-3 text-[#915EFF] sm:flex-row">
           <a
             href="https://www.linkedin.com/in/azadeh-galidari/"
             target="_blank"
@@ -21,7 +21,7 @@ const leftSider = () => {
             <i className="ri-phone-fill "></i>
           </a>
         </div>
-        <div className="w-[1px] h-32 bg-secondary sm:hidden"></div>
+        <div className="w-[1px] h-32 bg-[#915EFF] sm:hidden"></div>
       </div>
     </div>
   );

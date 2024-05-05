@@ -8,6 +8,11 @@ const Project = require('./models/projectModel');
 const Course = require('./models/courseModel');
 const Contact = require('./models/contactModel');
 
+
+//new Aboutme model
+const Aboutme = require('./models/aboutmeModel');
+
+
 const dbConfig = require('./config/dbConfig');
 
 const portfolioRoute = require('./routes/portfolioRoute');
@@ -27,6 +32,7 @@ app.get('/portfolio', async (req, res) => {
   try {
     const intro = await Intro.find();
     const about = await About.find();
+    const aboutme = await Aboutme.find();
     const experience = await Experience.find();
     const project = await Project.find();
     const course = await Course.find();
@@ -35,6 +41,7 @@ app.get('/portfolio', async (req, res) => {
     res.status(200).send({
       intro,
       about,
+      aboutme,
       experience,
       project,
       course,
@@ -62,6 +69,18 @@ app.post('/about', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+
+//New aboutme page
+app.post('/aboutme', async(req, res) => {
+  try{
+    const aboutme = await Aboutme.create(req.body);
+    res.status(200).json(aboutme);
+  } catch(error) {
+    res.status(500).json({ message: error.message });
+  }
+})
+
 
 app.post('/exprience', async (req, res) => {
   try {

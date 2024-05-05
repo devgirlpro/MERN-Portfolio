@@ -7,7 +7,7 @@ const About = () => {
   const { about } = portfolioData;
   const { description1, descriptin2, imageURL, skils } = about[0];
  
-
+ 
   return (
     <div className="bg-xprimary h-full p-10">
       <SectionTitle title="About" />

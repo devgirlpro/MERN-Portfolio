@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Intro from './Intro';
 import Hero from './Hero';
 import About from './About';
+import AboutMe from './AboutMe';
 import Experiences from './Experiences';
 import Tech from './Tech'
 import Projects from './Projects';
@@ -33,7 +34,9 @@ const Home = () => {
           <Hero /> 
           {/* <Intro /> */}
 
+          <AboutMe />
           <About />
+          
           <Experiences />
           <Tech />
           <Projects />
