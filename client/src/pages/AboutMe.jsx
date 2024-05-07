@@ -50,7 +50,7 @@ const AboutMe = () => {
   const { title1, title2, descriptin } = aboutme[0];
   return (
     <>
-      <motion.div>
+      <motion.div variants={textVariant()}>
         <p className={styles.sectionHeadText}>{title1}</p>
         <h2 className={styles.sectionHeadText}>{title2}</h2>
       </motion.div>

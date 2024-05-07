@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Learn from './pages/Learn';
 import Coursess from './pages/Courses';
 import Experiences from './pages/Experiences';
+import Experiencess from './pages/Experiencess';
 import Loader from './components/Loader';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -48,7 +49,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/intro" element={<Intro />} /> */}
         <Route path="/about" element={<About />} />
-        <Route path="/exprience" element={<Experiences />} />
+        <Route path="/exprience" element={<Experiencess />} />
         <Route path="/project" element={<Projects />} />
         <Route path="/course" element={<Coursess />} />
         <Route path="/contact" element={<Contact />} />

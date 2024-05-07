@@ -11,6 +11,7 @@ const Contact = require('./models/contactModel');
 
 //new Aboutme model
 const Aboutme = require('./models/aboutmeModel');
+const Experiense = require('./models/experinseModel');
 
 
 const dbConfig = require('./config/dbConfig');
@@ -34,6 +35,7 @@ app.get('/portfolio', async (req, res) => {
     const about = await About.find();
     const aboutme = await Aboutme.find();
     const experience = await Experience.find();
+    const experinse = await Experiense.find();
     const project = await Project.find();
     const course = await Course.find();
     const contact = await Contact.find();
@@ -43,6 +45,7 @@ app.get('/portfolio', async (req, res) => {
       about,
       aboutme,
       experience,
+      experinse,
       project,
       course,
       contact,
@@ -71,7 +74,7 @@ app.post('/about', async (req, res) => {
 });
 
 
-//New aboutme page
+//New aboutme
 app.post('/aboutme', async(req, res) => {
   try{
     const aboutme = await Aboutme.create(req.body);
@@ -86,6 +89,16 @@ app.post('/exprience', async (req, res) => {
   try {
     const experience = await Experience.create(req.body);
     res.status(200).json(experience);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//new experinse
+app.post('/expriense', async (req, res) => {
+  try {
+    const experiense = await Experiense.create(req.body);
+    res.status(200).json(experiense);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
