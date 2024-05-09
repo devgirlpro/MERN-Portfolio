@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { menu, close, logo } from '../assets';
+import navLinks from '../constants/navLinks';
 
-import Header from './Header';
 
 const Navbar = () => {
-  // const [active, setActive] = useState('');
+  const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +20,11 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
- 
   return (
     <nav
       className={`${
@@ -41,7 +38,7 @@ const Navbar = () => {
           to="/"
           className="flex items-center gap-2"
           onClick={() => {
-            // setActive('');
+            setActive('');
             window.scrollTo(0, 0);
           }}
         >
@@ -53,24 +50,18 @@ const Navbar = () => {
         </Link>
 
         <ul className="list-none flex gap-10 sm:hidden md:hidden">
-          <li className="hover:text-[#915EFF] cursor-pointer">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="hover:text-[#915EFF]  cursor-pointer">
-            <Link to="/exprience">Experinces</Link>
-          </li>
-          <li className="hover:text-[#915EFF]  cursor-pointer">
-            <Link to="/project">Projects</Link>
-          </li>
-          <li className="hover:text-[#915EFF]  cursor-pointer">
-            <Link to="/course">Courses</Link>
-          </li>
-          <li className="hover:text-[#915EFF] cursor-pointer">
-            <Link to="/contact">Contact</Link>
-          </li>
+          {navLinks.map((nav) => (
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title ? 'text-tertiary' : 'text-secondaryx'
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
+          ))}
         </ul>
-
-
 
         <div className="sm:flex hidden flex-1 justify-end items-center md:flex">
           <img
@@ -85,64 +76,27 @@ const Navbar = () => {
               !toggle ? 'hidden' : 'flex'
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className="list-none flex justify-end items-start flex-col gap-4">
-              <li className="hover:text-secondaryx cursor-pointer">
-                <Link to="/about">About</Link>
-              </li>
-              <li className="hover:text-secondaryx  cursor-pointer">
-                <Link to="/exprience">Experinces</Link>
-              </li>
-              <li className="hover:text-secondaryx  cursor-pointer">
-                <Link to="/project">Projects</Link>
-              </li>
-              <li className="hover:text-secondaryx  cursor-pointer">
-                <Link to="/course">Courses</Link>
-              </li>
-              <li className="hover:text-secondaryx cursor-pointer">
-                <Link to="/contact">Contact</Link>
-              </li>
+            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                    active === nav.title ? 'text-white' : 'text-secondary'
+                  }`}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    setActive(nav.title);
+                  }}
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              ))}
             </ul>
           </div>
-
         </div>
-
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-
-{
-  /* <ul className="p-5  flex  justify-center sm:justify-between">
-            <li className="text-secondary text-lg font-medium  p-2 sm:p-0 sm:text-xs sm:font-extralight">
-              <Link to="/about" className="border-b border-tertiary">
-                About
-              </Link>
-            </li>
-
-            <li className="text-secondary text-lg font-medium  p-2  sm:p-0 sm:text-xs sm:font-extralight">
-              <Link to="/exprience" className="border-b border-tertiary">
-                Experinces
-              </Link>
-            </li>
-
-            <li className="text-secondary text-lg font-medium  p-2  sm:p-0 sm:text-xs sm:font-extralight">
-              <Link to="/project" className="border-b border-tertiary">
-                Projects
-              </Link>
-            </li>
-
-            <li className="text-secondary text-lg font-medium  p-2 sm:p-0 sm:text-xs sm:font-extralight">
-              <Link to="/course" className="border-b border-tertiary">
-                Courses
-              </Link>
-            </li>
-
-            <li className="text-secondary text-lg font-medium  p-2 sm:p-0 sm:text-xs sm:font-extralight">
-              <Link to="/contact" className="border-b border-tertiary">
-                Contact
-              </Link>
-            </li>
-          </ul> */
-}

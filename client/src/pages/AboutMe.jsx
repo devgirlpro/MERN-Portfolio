@@ -7,6 +7,7 @@ import services from '../constants/services';
 import { fadeIn, textVariant } from '../utils/motions';
 
 import { SectionWrapper } from '../hoc/index';
+import SectionTitle from '../components/SectionTitle';
 
 //new
 import { useSelector } from 'react-redux';
@@ -50,9 +51,10 @@ const AboutMe = () => {
   const { title1, title2, descriptin } = aboutme[0];
   return (
     <>
+    <SectionTitle title="About" />
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionHeadText}>{title1}</p>
-        <h2 className={styles.sectionHeadText}>{title2}</h2>
+        <p className={`${styles.heroHeadText}`}>{title1}</p>
+        <h2 className={`${styles.heroHeadText}`}>{title2}</h2>
       </motion.div>
 
       <motion.p

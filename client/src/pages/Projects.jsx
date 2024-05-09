@@ -56,4 +56,8 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+// export default Projects;
+export default SectionWrapper(Projects, "projects");
+// export default SectionWrapper(AboutMe, 'about');
+// export default SectionWrapper(Works, "");
+// export default SectionWrapper(ContactMe, 'contact');

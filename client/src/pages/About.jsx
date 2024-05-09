@@ -1,5 +1,4 @@
 import React from 'react';
-import SectionTitle from '../components/SectionTitle';
 import { useSelector } from 'react-redux';
 
 const About = () => {
@@ -10,8 +9,7 @@ const About = () => {
  
   return (
     <div className="bg-xprimary h-full p-10">
-      <SectionTitle title="About" />
-
+      
       <div className="flex w-full items-center sm:flex-col md:flex-col">
         <div className="h-[70vh] w-1/2 sm:w-full md:w-full">
           <dotlottie-player

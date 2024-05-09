@@ -7,6 +7,8 @@ import { EarthCanvas } from '../components/canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motions';
 
+import SectionTitle from '../components/SectionTitle';
+
 const ContactMe = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -17,20 +19,69 @@ const ContactMe = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
 
-  const handleSubmit = (e) => {};
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  //service ID: service_33874kv
+  //template_cr09qtj
+  //service_33874kv
+  //Public Key: NGwovljm5efolhA2d
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send(
+        'service_33874kv',
+        'template_cr09qtj',
+        {
+            from_name: form.name,
+          to_name: "JavaScript Mastery",
+          from_email: form.email,
+          to_email: "agalidari@gmail.com",
+          message: form.message,
+        },
+        'NGwovljm5efolhA2d'
+    ).then(() => {
+        setLoading(false);
+        alert('Thank you. I will get back to you as soon as possible.');
+
+        setForm({
+            name: "",
+            email: "",
+            message: "",
+        })
+    }, (error) => {
+        setLoading(false)
+
+        console.log(error)
+
+        alert("Ahh, something went wrong. Please try again.");
+    })
+  };
 
   return (
+<>
+<SectionTitle title="Say Hello" />
     <div
-      className={`mt-12 flex flex-row ms:flex-col-reverse gap-10 overflow-hidden`}
+      className='flex flex-row md:flex-col-reverse sm:flex-col-reverse gap-10  overflow-hidden'
     >
+     
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        
+        <p className={`${styles.sectionSubText}`}>Get in touch</p>
+        <h3 className={`${styles.sectionSubText} sm: hidden`}>Contact.</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -64,7 +115,7 @@ const ContactMe = () => {
               rows={7}
               name="message"
               value={form.message}
-              onChange={handleSubmit}
+              onChange={handleChange}
               placeholder="What you want to say?"
               className="bg-tertiaryx py-4 px-6 placeholder:text-secondaryx text-white rounded-lg outline-none border-none font-medium"
             />
@@ -80,12 +131,13 @@ const ContactMe = () => {
       </motion.div>
 
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        variants={slideIn('right', 'tween', 0.2, 1)}
+        className="xl:flex-1 xl:h-auto w-1/2 flex-1 h-auto md:h-[550px] sm:w-[400px]"
       >
-        <EarthCanvas />
+        <EarthCanvas  />
       </motion.div>
     </div>
+    </>
   );
 };
 
