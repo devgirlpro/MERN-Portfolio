@@ -2,23 +2,16 @@ import { BrowserRouter } from 'react-router-dom';
 // import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Hero from './pages/Hero';
-// import Intro from './pages/Intro';
-import About from './pages/About';
 import AboutMe from './pages/AboutMe';
 import Tech from './pages/Tech';
 // import Resume from './pages/Resume';
-// import Projects from './pages/Projects';
-// import Contact from './pages/Contact';
-// import Learn from './pages/Learn';
-// import Coursess from './pages/Courses';
-// import Experiences from './pages/Experiences';
 import Experiencess from './pages/Experiencess';
 import Works from './pages/Works';
 import ContactMe from './pages/ContactMe';
 import StarsCanvas from './components/canvas/Stars.jsx';
 import Footer from './pages/Footer';
 import Loader from './components/Loader';
-import {  useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -58,7 +51,6 @@ function App() {
               <Hero />
             </div>
             <AboutMe />
-            <About />
             <Tech />
             <Experiencess />
             <Works />
