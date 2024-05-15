@@ -11,6 +11,7 @@ import {
     git,
     figma,
     threejs,
+    nextjs
   } from "../assets";
 
 const technologies = [
@@ -59,8 +60,8 @@ const technologies = [
       icon: git,
     },
     {
-      name: "figma",
-      icon: figma,
+      name: "nextjs",
+      icon: nextjs,
     },
 
   ];

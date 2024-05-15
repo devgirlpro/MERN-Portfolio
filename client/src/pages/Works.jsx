@@ -1,63 +1,58 @@
-import React from 'react'
-import {Tilt} from "react-tilt";
-import { motion } from "framer-motion";
+import React from 'react';
+import { Tilt } from 'react-tilt';
+import { motion } from 'framer-motion';
 
-import { styles } from "../styles";
-import { github } from "../assets";
-import { SectionWrapper } from "../hoc";
-import  projects  from "../constants/projects";
-import { fadeIn, textVariant } from "../utils/motions";
+import { styles } from '../styles';
+import { github } from '../assets';
+import { SectionWrapper } from '../hoc';
+// import projects from '../constants/projects';
+import { fadeIn, textVariant } from '../utils/motions';
 
 import SectionTitle from '../components/SectionTitle';
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-}) => {
+import { useSelector } from 'react-redux';
+
+const ProjectCard = ({prj, index}) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='p-5 rounded-2xl sm:w-full bg-tertiaryx'
+        className="p-5 rounded-2xl sm:w-full bg-tertiaryx"
       >
-        <div className='relative w-full h-[230px] '>
+        <div className="relative w-full h-[230px] ">
           <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            src={prj.image}
+            alt="project_image"
+            className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              onClick={() => window.open(prj.source_code_link, '_blank')}
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
                 src={github}
-                alt='github'
-                className='w-1/2 h-1/2 object-contain '
+                alt="github"
+                className="w-1/2 h-1/2 object-contain "
               />
             </div>
           </div>
         </div>
 
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondaryx text-[14px]'>{description}</p>
+        <div className="mt-5">
+          <h3 className="text-white font-bold text-[24px]">{prj.name}</h3>
+          <p className="mt-2 text-secondaryx text-[14px]">{prj.description}</p>
         </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {prj.tags.map((tag) => (
             <p
-              key={`${name}-${tag.name}`}
+              key={`${tag.name}`}
               className={`text-[14px] ${tag.color}`}
             >
               #{tag.name}
@@ -69,22 +64,21 @@ const ProjectCard = ({
   );
 };
 
-
-
 const Works = () => {
+  const { portfolioData } = useSelector((state) => state.root);
+  const { project } = portfolioData;
   return (
     <>
-     
       <motion.div variants={textVariant()}>
-      <SectionTitle title="Projects" />
+        <SectionTitle title="Projects" />
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
-      <div className='w-full flex'>
+      <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondaryx text-[17px] max-w-3xl leading-[30px]'
+          variants={fadeIn('', '', 0.1, 1)}
+          className="mt-3 text-secondaryx text-[17px] max-w-3xl leading-[30px]"
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -94,13 +88,13 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-1 flex-row gap-7 sm:flex-col'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+      <div className="mt-20 flex flex-row gap-12 sm:flex-col md:flex-col">
+        {project.map((prj, index) => (
+          <ProjectCard key={`prj-${index}`}  {...project} prj={prj}/>
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SectionWrapper(Works, "works");
+export default SectionWrapper(Works, 'works');

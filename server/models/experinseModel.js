@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const experienseSchema = new mongoose.Schema(
+const experienceSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -8,10 +8,6 @@ const experienseSchema = new mongoose.Schema(
     },
     company: {
       type: String,
-      required: true,
-    },
-    icon: {
-        type: String,
       required: true,
     },
     iconBg: {
@@ -33,5 +29,5 @@ const experienseSchema = new mongoose.Schema(
   }
 );
 
-const Experiense = mongoose.model('experienses', experienseSchema);
-module.exports = Experiense;
+const Experience = mongoose.model('experiences', experienceSchema);
+module.exports = Experience;
