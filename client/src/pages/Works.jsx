@@ -3,7 +3,7 @@ import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { github } from '../assets';
+import { logo } from '../assets';
 import { SectionWrapper } from '../hoc';
 // import projects from '../constants/projects';
 import { fadeIn, textVariant } from '../utils/motions';
@@ -36,8 +36,8 @@ const ProjectCard = ({prj, index}) => {
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
-                src={github}
-                alt="github"
+                src={logo}
+                alt="Azadeh galidari"
                 className="w-1/2 h-1/2 object-contain "
               />
             </div>
